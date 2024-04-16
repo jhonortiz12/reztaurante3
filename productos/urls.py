@@ -1,7 +1,8 @@
 from django.urls import path
-from . import views
+from .views import * 
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('inicio', views.index, name='index'),
+    path('v1/pro', Producto_APIView.as_view()),
+    path('v1/cat', CategoriaProducto_APIView.as_view()),
+    path('v1/cat/<int:pk>', CategoriaProducto_APIView_Detail.as_view()),
 ]
